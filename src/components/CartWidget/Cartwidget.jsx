@@ -1,7 +1,7 @@
 import {Flex, Text } from "@chakra-ui/react"; 
 import { TbShoppingCartDollar } from "react-icons/tb";
 
-const CartWidget = () =>{ 
+export const CartWidget = () =>{ 
 return(  
     <Flex alignItems={"center"} justifyContent={"center"} width={90}> 
         <TbShoppingCartDollar  size={25}/>
@@ -11,4 +11,3 @@ return(
 );
 } ; 
 
-export default CartWidget; 
