@@ -1,20 +1,16 @@
 import {  ChakraProvider } from '@chakra-ui/react';  
 import React from 'react';  
 import { MainRouter } from './routes';
-import { NavBar } from './components';
+import { CartProvider } from './context';
 
   
-
-
-
-
-
-
 function App() {
   return ( 
     
     <ChakraProvider> 
-     <MainRouter />
+      <CartProvider> 
+        <MainRouter/>
+      </CartProvider>
     </ChakraProvider>  
 
   

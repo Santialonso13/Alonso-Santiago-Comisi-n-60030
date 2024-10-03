@@ -1,13 +1,21 @@
 import {Flex, Text } from "@chakra-ui/react"; 
-import { TbShoppingCartDollar } from "react-icons/tb";
+import { useContext } from "react";
+import { BsMinecart } from "react-icons/bs";
+import { CartContext } from "../../context";  
+import { Link } from "react-router-dom";
 
-export const CartWidget = () =>{ 
+
+export const CartWidget = () =>{  
+    const {cartState} = useContext(CartContext);  
+    const qtyTotalItems = cartState.reduce((acc,item)=> acc + item.qtyItem, 0); 
 return(  
-    <Flex alignItems={"center"} justifyContent={"center"} width={90}> 
-        <TbShoppingCartDollar  size={25}/>
-        <Text fontSize={"2rem"}> 0 </Text>
-    </Flex>
+    <Link to ="/checkout"> 
+         <Flex alignItems={"center"} justifyContent={"center"} width={90}> 
+            <BsMinecart  size={25}/>
+             <Text fontSize={"2rem"}>{qtyTotalItems}</Text>
+         </Flex>
     
+    </Link> 
 );
 } ; 
 
